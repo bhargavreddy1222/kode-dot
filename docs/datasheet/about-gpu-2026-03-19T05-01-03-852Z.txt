@@ -1,0 +1,699 @@
+Graphics Feature Status
+=======================
+*   Canvas: Software only. Hardware acceleration disabled
+*   Direct Rendering Display Compositor: Disabled
+*   Compositing: Software only. Hardware acceleration disabled
+*   Multiple Raster Threads: Disabled
+*   OpenGL: Disabled
+*   Rasterization: Software only. Hardware acceleration disabled
+*   Raw Draw: Disabled
+*   Skia Graphite: Disabled
+*   TreesInViz: Disabled
+*   Video Decode: Software only. Hardware acceleration disabled
+*   Video Encode: Software only. Hardware acceleration disabled
+*   Vulkan: Disabled
+*   WebGL: Disabled
+*   WebGPU: Disabled
+*   WebGPU interop: Disabled
+*   WebNN: Disabled
+
+Version Information
+===================
+Data exported              : 2026-03-19T05:00:43.766Z
+Chrome version             : Chrome/146.0.7680.80
+Operating system           : Linux 6.17.0-19-generic
+Software rendering list URL: https://chromium.googlesource.com/chromium/src/+/f08938029c887ea624da7a1717059788ed95034d/gpu/config/software_rendering_list.json
+Driver bug list URL        : https://chromium.googlesource.com/chromium/src/+/f08938029c887ea624da7a1717059788ed95034d/gpu/config/gpu_driver_bug_list.json
+ANGLE commit id            : 1d3190bf5633
+2D graphics backend        : Skia/146 248acd90d9a35ac46b2ec30201ae50f301b8a173
+Command Line               : /opt/brave.com/brave/brave --disable-domain-reliability --enable-dom-distiller --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --lso-url=https://no-thanks.invalid --variations-server-url=https://variations.brave.com/seed --variations-insecure-server-url=https://variations.brave.com/seed --flag-switches-begin --enable-gpu-rasterization --ignore-gpu-blocklist --enable-features=Vulkan --flag-switches-end --ozone-platform=x11 --component-updater=url-source=https://go-updater.brave.com/extensions
+Executable path            :
+
+Driver Information
+==================
+Initialization time             : 0
+In-process GPU                  : false
+Skia Backend                    : None
+Passthrough Command Decoder     : true
+Sandboxed                       : false
+GPU0                            : VENDOR= 0x0000, DEVICE=0x0000
+Optimus                         : false
+AMD switchable                  : false
+Pixel shader version            : 
+Vertex shader version           : 
+Max. MSAA samples               : 
+Machine model name              : 
+Machine model version           : 
+GL implementation parts         : (gl=disabled,angle=none)
+Display type                    : 
+GL_VENDOR                       : Disabled
+GL_RENDERER                     : Disabled
+GL_VERSION                      : Disabled
+GL_EXTENSIONS                   : 
+Disabled Extensions             : 
+Disabled WebGL Extensions       : 
+Window system binding vendor    : 
+Window system binding version   : 
+Window system binding extensions: 
+XDG_CURRENT_DESKTOP             : ubuntu:GNOME
+XDG_SESSION_TYPE                : x11
+GDMSESSION                      : ubuntu-xorg
+Ozone platform                  : x11
+Direct rendering version        : unknown
+Reset notification strategy     : 0x0000
+GPU process crash count         : 0
+
+Problems Detected
+=================
+*   WebGPU has been disabled via blocklist or the command line.
+    Disabled Features: webgpu
+
+*   Accelerated rasterization has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: rasterization
+
+*   Accelerated video encode has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: video_encode
+
+*   Accelerated video decode has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: video_decode
+
+*   WebGL has been disabled via blocklist or the command line.
+    Disabled Features: webgl
+
+*   Gpu compositing has been disabled, either via blocklist, about:flags or the command line. The browser will fall back to software compositing and hardware acceleration will be unavailable.
+    Disabled Features: gpu_compositing
+
+*   Accelerated 2D canvas is unavailable: either disabled via blocklist or the command line.
+    Disabled Features: 2d_canvas
+
+*   GPU process was unable to boot: GPU access is disabled in chrome://settings.
+    Disabled Features: all
+
+Dawn Info
+=========
+
+<Integrated GPU>  Vulkan backend - Intel(R) Arc(tm) Graphics (MTL)
+------------------------------------------------------------------
+
+[WebGPU Status]
+---------------
+*   Available
+
+[Adapter Supported Features]
+----------------------------
+*   core-features-and-limits
+*   depth-clip-control
+*   depth32float-stencil8
+*   texture-compression-bc
+*   texture-compression-bc-sliced-3d
+*   texture-compression-etc2
+*   timestamp-query
+*   indirect-first-instance
+*   shader-f16
+*   rg11b10ufloat-renderable
+*   bgra8unorm-storage
+*   float32filterable
+*   float32blendable
+*   clip-distances
+*   dual-source-blending
+*   subgroups
+*   texture-formats-tier1
+*   texture-formats-tier2
+*   primitive-index
+*   texture-component-swizzle
+*   dawn-internal-usages
+*   dawn-multi-planar-formats
+*   dawn-native
+*   implicit-device-synchronization
+*   transient-attachments
+*   unorm16texture-formats
+*   adapter-properties-memory-heaps
+*   adapter-properties-vk
+*   dawn-format-capabilities
+*   dawn-drm-format-capabilities
+*   shared-texture-memory-dma-buf
+*   shared-texture-memory-opaque-fd
+*   shared-fence-vk-semaphore-opaque-fd
+*   shared-fence-sync-fd
+*   dawn-load-resolve-texture
+*   flexible-texture-views
+
+[Enabled Toggle Names]
+----------------------
+*   lazy_clear_resource_on_first_use: 
+    (https://crbug.com/dawn/145):
+    Clears resource to zero on first usage. This initializes the resource so
+    that no dirty bits from recycled memory is present in the new resource.
+
+*   use_temporary_buffer_in_texture_to_texture_copy: 
+    (https://crbug.com/dawn/42):
+    Split texture-to-texture copy into two copies: copy from source texture
+    into a temporary buffer, and copy from the temporary buffer into the
+    destination texture when copying between compressed textures that don't
+    have block-aligned sizes. This workaround is enabled by default on all
+    Vulkan drivers to solve an issue in the Vulkan SPEC about the
+    texture-to-texture copies with compressed formats. See #1005
+    (https://github.com/KhronosGroup/Vulkan-Docs/issues/1005) for more
+    details.
+
+*   vulkan_use_d32s8: 
+    (https://crbug.com/dawn/286):
+    Vulkan mandates support of either D32_FLOAT_S8 or D24_UNORM_S8. When
+    available the backend will use D32S8 (toggle to on) but setting the toggle
+    to off will make it use the D24S8 format when possible.
+
+*   vulkan_use_s8: 
+    (https://crbug.com/dawn/666):
+    Vulkan has a pure stencil8 format but it is not universally available.
+    When this toggle is on, the backend will use S8 for the stencil8 format,
+    otherwise it will fallback to D32S8 or D24S8.
+
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   vulkan_use_demote_to_helper_invocation_extension: 
+    (https://crbug.com/42250787):
+    Sets the use of the vulkan demote to helper extension
+
+*   use_placeholder_fragment_in_vertex_only_pipeline: 
+    (https://crbug.com/dawn/136):
+    Use a placeholder empty fragment shader in vertex only render pipeline.
+    This toggle must be enabled for OpenGL ES backend, the Vulkan Backend, and
+    serves as a workaround by default enabled on some Metal devices with Intel
+    GPU to ensure the depth result is correct.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+*   use_vulkan_zero_initialize_workgroup_memory_extension: 
+    (https://crbug.com/dawn/1302):
+    Initialize workgroup memory with OpConstantNull on Vulkan when the Vulkan
+    extension VK_KHR_zero_initialize_workgroup_memory is supported.
+
+*   vulkan_use_image_robust_access_2: 
+    (https://crbug.com/tint/1890):
+    Disable Tint robustness transform on textures when VK_EXT_robustness2 is
+    supported and robustImageAccess2 == VK_TRUE.
+
+*   vulkan_use_buffer_robust_access_2: 
+    (https://crbug.com/tint/1890):
+    Disable index clamping on the runtime-sized arrays on buffers in Tint
+    robustness transform when VK_EXT_robustness2 is supported and
+    robustBufferAccess2 == VK_TRUE.
+
+*   saturate_as_min_max_f16: 
+    (https://crbug.com/448873316):
+    Polyfill saturate as min and max for f16.
+
+*   subgroup_shuffle_clamped: 
+    (https://crbug.com/dawn/2502):
+    Polyfill subgroupShuffle by clamping the id param to within maximum
+    possible subgroup size.
+
+*   use_vulkan_memory_model: 
+    (https://crbug.com/392606604):
+    Use the Vulkan Memory Model if available.
+
+*   enable_integer_range_analysis_in_robustness: 
+    (https://crbug.com/348701956):
+    Compute the range of the index with Integer Range Analysis in the
+    robustness transform and skip doing index clamping when the out of bound
+    access cannot happen.
+
+*   use_spirv_1_4: 
+    (https://crbug.com/422421915):
+    Use SPIR-V 1.4 if available
+
+*   blob_cache_hash_validation: 
+    (https://crbug.com/429938352):
+    Enable hash validation when loading/storing from/to the blob cache
+
+*   decompose_uniform_buffers: 
+    (https://crbug.com/448452698):
+    Decompose uniform buffers into arrays of vec4<u32> on backends for Vulkan
+    and OpenGL.
+
+*   enable_spirv_validation: 
+    (https://crbug.com/473526415):
+    Enable validation of SPIR-V generated by Tint.
+
+*   vulkan_use_create_render_pass_2: 
+    (https://crbug.com/chromium/463893793):
+    Makes use of VK_KHR_create_renderpass2 when creating VkRenderPass objects.
+    Ignored when vulkan_use_dynamic_rendering is enabled.
+
+*   wait_is_thread_safe: 
+    (https://crbug.com/412761228):
+    WaitFor* functions are thread-safe and can be called without the
+    device-lock if implicit synchronization is enabled.
+
+[WebGPU Required Toggles - enabled]
+-----------------------------------
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+<CPU>  Vulkan backend - SwiftShader Device (Subzero)
+----------------------------------------------------
+
+[WebGPU Status]
+---------------
+*   Blocklisted - crbug.com/40057808: CPU adapters not fully tested or conformant.
+
+[Adapter Supported Features]
+----------------------------
+*   core-features-and-limits
+*   depth-clip-control
+*   depth32float-stencil8
+*   texture-compression-bc
+*   texture-compression-bc-sliced-3d
+*   texture-compression-etc2
+*   texture-compression-astc
+*   texture-compression-astc-sliced-3d
+*   timestamp-query
+*   indirect-first-instance
+*   rg11b10ufloat-renderable
+*   bgra8unorm-storage
+*   float32filterable
+*   float32blendable
+*   clip-distances
+*   subgroups
+*   texture-component-swizzle
+*   dawn-internal-usages
+*   dawn-multi-planar-formats
+*   dawn-native
+*   implicit-device-synchronization
+*   transient-attachments
+*   unorm16texture-formats
+*   adapter-properties-memory-heaps
+*   adapter-properties-vk
+*   dawn-format-capabilities
+*   shared-texture-memory-opaque-fd
+*   shared-fence-vk-semaphore-opaque-fd
+*   dawn-load-resolve-texture
+*   flexible-texture-views
+
+[Enabled Toggle Names]
+----------------------
+*   lazy_clear_resource_on_first_use: 
+    (https://crbug.com/dawn/145):
+    Clears resource to zero on first usage. This initializes the resource so
+    that no dirty bits from recycled memory is present in the new resource.
+
+*   use_temporary_buffer_in_texture_to_texture_copy: 
+    (https://crbug.com/dawn/42):
+    Split texture-to-texture copy into two copies: copy from source texture
+    into a temporary buffer, and copy from the temporary buffer into the
+    destination texture when copying between compressed textures that don't
+    have block-aligned sizes. This workaround is enabled by default on all
+    Vulkan drivers to solve an issue in the Vulkan SPEC about the
+    texture-to-texture copies with compressed formats. See #1005
+    (https://github.com/KhronosGroup/Vulkan-Docs/issues/1005) for more
+    details.
+
+*   vulkan_use_d32s8: 
+    (https://crbug.com/dawn/286):
+    Vulkan mandates support of either D32_FLOAT_S8 or D24_UNORM_S8. When
+    available the backend will use D32S8 (toggle to on) but setting the toggle
+    to off will make it use the D24S8 format when possible.
+
+*   vulkan_use_s8: 
+    (https://crbug.com/dawn/666):
+    Vulkan has a pure stencil8 format but it is not universally available.
+    When this toggle is on, the backend will use S8 for the stencil8 format,
+    otherwise it will fallback to D32S8 or D24S8.
+
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   vulkan_use_demote_to_helper_invocation_extension: 
+    (https://crbug.com/42250787):
+    Sets the use of the vulkan demote to helper extension
+
+*   use_placeholder_fragment_in_vertex_only_pipeline: 
+    (https://crbug.com/dawn/136):
+    Use a placeholder empty fragment shader in vertex only render pipeline.
+    This toggle must be enabled for OpenGL ES backend, the Vulkan Backend, and
+    serves as a workaround by default enabled on some Metal devices with Intel
+    GPU to ensure the depth result is correct.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+*   use_vulkan_zero_initialize_workgroup_memory_extension: 
+    (https://crbug.com/dawn/1302):
+    Initialize workgroup memory with OpConstantNull on Vulkan when the Vulkan
+    extension VK_KHR_zero_initialize_workgroup_memory is supported.
+
+*   use_vulkan_memory_model: 
+    (https://crbug.com/392606604):
+    Use the Vulkan Memory Model if available.
+
+*   vulkan_direct_variable_access_transform_handle: 
+    (https://crbug.com/387000529):
+    Transform handles using direct variable access.
+
+*   enable_integer_range_analysis_in_robustness: 
+    (https://crbug.com/348701956):
+    Compute the range of the index with Integer Range Analysis in the
+    robustness transform and skip doing index clamping when the out of bound
+    access cannot happen.
+
+*   use_spirv_1_4: 
+    (https://crbug.com/422421915):
+    Use SPIR-V 1.4 if available
+
+*   blob_cache_hash_validation: 
+    (https://crbug.com/429938352):
+    Enable hash validation when loading/storing from/to the blob cache
+
+*   decompose_uniform_buffers: 
+    (https://crbug.com/448452698):
+    Decompose uniform buffers into arrays of vec4<u32> on backends for Vulkan
+    and OpenGL.
+
+*   enable_spirv_validation: 
+    (https://crbug.com/473526415):
+    Enable validation of SPIR-V generated by Tint.
+
+*   vulkan_use_create_render_pass_2: 
+    (https://crbug.com/chromium/463893793):
+    Makes use of VK_KHR_create_renderpass2 when creating VkRenderPass objects.
+    Ignored when vulkan_use_dynamic_rendering is enabled.
+
+*   wait_is_thread_safe: 
+    (https://crbug.com/412761228):
+    WaitFor* functions are thread-safe and can be called without the
+    device-lock if implicit synchronization is enabled.
+
+[WebGPU Required Toggles - enabled]
+-----------------------------------
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+<CPU>  Vulkan backend - llvmpipe (LLVM 20.1.2, 256 bits)
+--------------------------------------------------------
+
+[WebGPU Status]
+---------------
+*   Blocklisted - crbug.com/40057808: CPU adapters not fully tested or conformant.
+
+[Adapter Supported Features]
+----------------------------
+*   core-features-and-limits
+*   depth-clip-control
+*   depth32float-stencil8
+*   texture-compression-bc
+*   texture-compression-bc-sliced-3d
+*   timestamp-query
+*   indirect-first-instance
+*   shader-f16
+*   rg11b10ufloat-renderable
+*   bgra8unorm-storage
+*   float32filterable
+*   float32blendable
+*   clip-distances
+*   dual-source-blending
+*   subgroups
+*   primitive-index
+*   texture-component-swizzle
+*   dawn-internal-usages
+*   dawn-multi-planar-formats
+*   dawn-native
+*   implicit-device-synchronization
+*   transient-attachments
+*   unorm16texture-formats
+*   adapter-properties-memory-heaps
+*   adapter-properties-vk
+*   dawn-format-capabilities
+*   shared-texture-memory-opaque-fd
+*   dawn-load-resolve-texture
+*   flexible-texture-views
+
+[Enabled Toggle Names]
+----------------------
+*   lazy_clear_resource_on_first_use: 
+    (https://crbug.com/dawn/145):
+    Clears resource to zero on first usage. This initializes the resource so
+    that no dirty bits from recycled memory is present in the new resource.
+
+*   use_temporary_buffer_in_texture_to_texture_copy: 
+    (https://crbug.com/dawn/42):
+    Split texture-to-texture copy into two copies: copy from source texture
+    into a temporary buffer, and copy from the temporary buffer into the
+    destination texture when copying between compressed textures that don't
+    have block-aligned sizes. This workaround is enabled by default on all
+    Vulkan drivers to solve an issue in the Vulkan SPEC about the
+    texture-to-texture copies with compressed formats. See #1005
+    (https://github.com/KhronosGroup/Vulkan-Docs/issues/1005) for more
+    details.
+
+*   vulkan_use_d32s8: 
+    (https://crbug.com/dawn/286):
+    Vulkan mandates support of either D32_FLOAT_S8 or D24_UNORM_S8. When
+    available the backend will use D32S8 (toggle to on) but setting the toggle
+    to off will make it use the D24S8 format when possible.
+
+*   vulkan_use_s8: 
+    (https://crbug.com/dawn/666):
+    Vulkan has a pure stencil8 format but it is not universally available.
+    When this toggle is on, the backend will use S8 for the stencil8 format,
+    otherwise it will fallback to D32S8 or D24S8.
+
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   vulkan_use_demote_to_helper_invocation_extension: 
+    (https://crbug.com/42250787):
+    Sets the use of the vulkan demote to helper extension
+
+*   use_placeholder_fragment_in_vertex_only_pipeline: 
+    (https://crbug.com/dawn/136):
+    Use a placeholder empty fragment shader in vertex only render pipeline.
+    This toggle must be enabled for OpenGL ES backend, the Vulkan Backend, and
+    serves as a workaround by default enabled on some Metal devices with Intel
+    GPU to ensure the depth result is correct.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+*   use_vulkan_zero_initialize_workgroup_memory_extension: 
+    (https://crbug.com/dawn/1302):
+    Initialize workgroup memory with OpConstantNull on Vulkan when the Vulkan
+    extension VK_KHR_zero_initialize_workgroup_memory is supported.
+
+*   vulkan_use_image_robust_access_2: 
+    (https://crbug.com/tint/1890):
+    Disable Tint robustness transform on textures when VK_EXT_robustness2 is
+    supported and robustImageAccess2 == VK_TRUE.
+
+*   vulkan_use_buffer_robust_access_2: 
+    (https://crbug.com/tint/1890):
+    Disable index clamping on the runtime-sized arrays on buffers in Tint
+    robustness transform when VK_EXT_robustness2 is supported and
+    robustBufferAccess2 == VK_TRUE.
+
+*   use_vulkan_memory_model: 
+    (https://crbug.com/392606604):
+    Use the Vulkan Memory Model if available.
+
+*   enable_integer_range_analysis_in_robustness: 
+    (https://crbug.com/348701956):
+    Compute the range of the index with Integer Range Analysis in the
+    robustness transform and skip doing index clamping when the out of bound
+    access cannot happen.
+
+*   use_spirv_1_4: 
+    (https://crbug.com/422421915):
+    Use SPIR-V 1.4 if available
+
+*   blob_cache_hash_validation: 
+    (https://crbug.com/429938352):
+    Enable hash validation when loading/storing from/to the blob cache
+
+*   decompose_uniform_buffers: 
+    (https://crbug.com/448452698):
+    Decompose uniform buffers into arrays of vec4<u32> on backends for Vulkan
+    and OpenGL.
+
+*   enable_spirv_validation: 
+    (https://crbug.com/473526415):
+    Enable validation of SPIR-V generated by Tint.
+
+*   vulkan_use_create_render_pass_2: 
+    (https://crbug.com/chromium/463893793):
+    Makes use of VK_KHR_create_renderpass2 when creating VkRenderPass objects.
+    Ignored when vulkan_use_dynamic_rendering is enabled.
+
+*   wait_is_thread_safe: 
+    (https://crbug.com/412761228):
+    WaitFor* functions are thread-safe and can be called without the
+    device-lock if implicit synchronization is enabled.
+
+[WebGPU Required Toggles - enabled]
+-----------------------------------
+*   disallow_spirv: 
+    (https://crbug.com/1214923):
+    Disallow usage of SPIR-V completely so that only WGSL is used for shader
+    modules. This is useful to prevent a Chromium renderer process from
+    successfully sending SPIR-V code to be compiled in the GPU process.
+
+*   timestamp_quantization: 
+    (https://crbug.com/dawn/1800):
+    Enable timestamp queries quantization to reduce the precision of timers
+    that can be created with timestamp queries.
+
+Compositor Information
+======================
+Tile Update Mode: One-copy
+Partial Raster  : Enabled
+
+Display(s) Information
+======================
+Info                          : Display[21536134253248578] bounds=[0,0 1536x960], workarea=[0,32 1536x928], scale=1.25, rotation=0, panel_rotation=0 internal detected
+Color space (all)             : {r:[0.6797, 0.3203], g:[0.2377, 0.7223], b:[0.1397, 0.0498], w:[0.3127, 0.3290]}, transfer:SRGB, matrix:RGB, range:FULL}
+Buffer format (all)           : BGRA_8888
+Color volume                  : {r:[0.6797, 0.3203], g:[0.2377, 0.7223], b:[0.1397, 0.0498], w:[0.3127, 0.3290]}
+SDR white level in nits       : 203
+HDR relative maximum luminance: 1
+Bits per color component      : 8
+Bits per pixel                : 24
+Refresh Rate in Hz            : 59.99890899658203
+
+Video Acceleration Information
+==============================
+Decoding: 
+Encoding:
+
+Vulkan Information
+==================
+
+Device Performance Information
+==============================
+
+Driver Information for Hardware GPU
+===================================
+Initialization time             : 0
+In-process GPU                  : false
+Skia Backend                    : None
+Passthrough Command Decoder     : true
+Sandboxed                       : false
+GPU0                            : VENDOR= 0x0000, DEVICE=0x0000
+Optimus                         : false
+AMD switchable                  : false
+Pixel shader version            : 
+Vertex shader version           : 
+Max. MSAA samples               : 
+Machine model name              : 
+Machine model version           : 
+GL implementation parts         : (gl=disabled,angle=none)
+Display type                    : 
+GL_VENDOR                       : Disabled
+GL_RENDERER                     : Disabled
+GL_VERSION                      : Disabled
+GL_EXTENSIONS                   : 
+Disabled Extensions             : 
+Disabled WebGL Extensions       : 
+Window system binding vendor    : 
+Window system binding version   : 
+Window system binding extensions: 
+XDG_CURRENT_DESKTOP             : ubuntu:GNOME
+XDG_SESSION_TYPE                : x11
+GDMSESSION                      : ubuntu-xorg
+Ozone platform                  : x11
+Direct rendering version        : unknown
+Reset notification strategy     : 0x0000
+GPU process crash count         : 0
+
+Graphics Feature Status for Hardware GPU
+========================================
+*   Canvas: Software only. Hardware acceleration disabled
+*   Direct Rendering Display Compositor: Disabled
+*   Compositing: Software only. Hardware acceleration disabled
+*   Multiple Raster Threads: Disabled
+*   OpenGL: Disabled
+*   Rasterization: Software only. Hardware acceleration disabled
+*   Raw Draw: Disabled
+*   Skia Graphite: Disabled
+*   TreesInViz: Disabled
+*   Video Decode: Software only. Hardware acceleration disabled
+*   Video Encode: Software only. Hardware acceleration disabled
+*   Vulkan: Disabled
+*   WebGL: Disabled
+*   WebGPU: Disabled
+*   WebGPU interop: Disabled
+*   WebNN: Disabled
+
+Problems Detected for Hardware GPU
+==================================
+*   WebGPU has been disabled via blocklist or the command line.
+    Disabled Features: webgpu
+
+*   Accelerated rasterization has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: rasterization
+
+*   Accelerated video encode has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: video_encode
+
+*   Accelerated video decode has been disabled, either via blocklist, about:flags or the command line.
+    Disabled Features: video_decode
+
+*   WebGL has been disabled via blocklist or the command line.
+    Disabled Features: webgl
+
+*   Gpu compositing has been disabled, either via blocklist, about:flags or the command line. The browser will fall back to software compositing and hardware acceleration will be unavailable.
+    Disabled Features: gpu_compositing
+
+*   Accelerated 2D canvas is unavailable: either disabled via blocklist or the command line.
+    Disabled Features: 2d_canvas
+
+*   GPU process was unable to boot: GPU access is disabled in chrome://settings.
+    Disabled Features: all
+
+Log Messages
+============
+[87332:87332:0319/103011.973908:WARNING:sandbox/policy/linux/sandbox_linux.cc:405] : InitializeSandbox() called with multiple threads in process gpu-process.
+[87332:87352:0319/103019.454292:WARNING:ui/gfx/x/connection.cc:61] : X error received.  Request: Shm::PutImageRequest, Error: DrawableError{.sequence = 562, .bad_value = 10485789, .minor_opcode = 3, .major_opcode = 130}
+[87332:87352:0319/103029.485204:WARNING:ui/gfx/x/connection.cc:61] : X error received.  Request: Shm::PutImageRequest, Error: DrawableError{.sequence = 818, .bad_value = 10485764, .minor_opcode = 3, .major_opcode = 130}
+[87332:87352:0319/103029.511149:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.511465:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.511773:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.511857:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.511909:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.512231:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.512296:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.512484:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.539045:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.539306:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.539446:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:385] : SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[87332:87352:0319/103029.540136:WARNING:ui/gfx/x/connection.cc:61] : X error received.  Request: Shm::PutImageRequest, Error: DrawableError{.sequence = 820, .bad_value = 10485764, .minor_opcode = 3, .major_opcode = 130}

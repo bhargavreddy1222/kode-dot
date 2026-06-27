@@ -1,0 +1,2 @@
+source /home/bhargav/esp/kode-dot/build/bootloader/gdbinit/symbols
+source /home/bhargav/esp/kode-dot/build/bootloader/gdbinit/connect
